@@ -12,6 +12,137 @@ export async function main(ns) {
 
 
 }
+async function runCasino(ns){
+	if (!ns.isRunning('casino.js', ns.getHostname()) && ns.getPlayer().money < 1e9) {
+		if (ns.getPlayer().city != "Aevum") { ns.singularity.travelToCity("Aevum") }
+		ns.exec("casino.js", ns.getHostname(), 1)
+		await ns.sleep(10000)
+	}
+	await ns.sleep(5000)
+}
+
+//HACKING STRATEGY
+/*
+--FIRST TIMER--
+sleeves to shock recovery
+start hacknet
+get seed money (10M?)
+move to aevum
+savescum casino.js
+join Aevum 
+move to sector12
+join Sector12 
+move to volhaven
+study algorithms at volhaven
+buy tor
+buy BruteSSH, FTPCrack
+run servMgr.js
+run xpFarm @ hacknet nodes
+run untargeted batcher
+invade && backdoor CSEC
+kill hacknet
+upgrade home server when possible (loop)
+map augs path
+farm faction rep for augs lvl
+	sector12
+	Aevum
+	CSEC
+	NiteSec
+get money for all augs
+install all augs
+*/
+async function hackPhaseOne(ns){
+	ns.print("Starting Phase ONE")
+	ns.exec("/scripts/sleeves.js", ns.getHostname(), 1, "shockRecovery")
+	ns.exec("/scripts/hnMgr.js", ns.getHostname(), 1)
+	//awaiting seed money
+	while(ns.getPlayer().money < 1e7){ns.sleep(1000)}
+	if (ns.getPlayer().city != "Aevum") { ns.singularity.travelToCity("Aevum") }
+	//savescum casino.js
+	await runCasino(ns)
+
+}
+
+
+/*
+--SECOND PHASE--
+sleeves to shock recovery
+run xpFarm
+move to aevum
+savescum casino.js
+move to volhaven
+study algorithms at volhaven
+move to Chongqing
+join chongqing
+move to new tokyo
+join new tokyo
+move to ishima
+join ishima
+join Tian Di Hui
+buy tor
+buy BruteSSH, FTPCrack
+kill xpFarm
+run servMgr.js
+run untargeted batcher
+upgrade home server when possible (loop)
+map augs path
+farm faction rep for augs lvl
+	chongqing
+	new tokyo
+	ishima
+	Tian Di Hui
+get money for all augs
+install all augs
+*/
+
+/*
+--THIRD PHASE--
+sleeves to shock recovery
+run xpFarm
+move to aevum
+savescum casino.js
+move to volhaven
+study algorithms at volhaven
+buy tor
+buy BruteSSH, FTPCrack
+kill xpFarm
+run servMgr.js
+run untargeted batcher
+upgrade home server when possible (loop)
+join volhaven
+invade && backdoor avmnite-02h
+invade && backdoor I.I.I.I
+join NiteSec
+join Black Hand
+map augs path
+farm faction rep for augs lvl of joined factions
+get money for all augs
+install all augs
+*/
+
+/*
+--4TH PHASE--
+sleeves to shock recovery
+run xpFarm
+move to aevum
+savescum casino.js
+move to volhaven
+study algorithms at volhaven
+sleep 1min
+kill xpFarm
+run grafting (most expensive affordable)
+run servMgr.js
+run untargeted batcher
+sleep 5min ('til 10b)
+buy tor
+buy 4 tools
+invade && backdoor run4theh111z 
+join BitRunners
+farm faction rep for augs lvl of joined factions
+get money for all augs
+install all augs
+*/
+
 
 async function kickstart(ns) {
 	//kickstart
@@ -33,7 +164,7 @@ async function kickstart(ns) {
 		}
 	}
 
-	if (!ns.isRunning('sigmastart.js', ns.getHostname() && ns.getPlayer().money < 1e9) {
+	if (!ns.isRunning('casino.js', ns.getHostname()) && ns.getPlayer().money < 1e9) {
 		ns.print("Seed money complete.\nMilking Casino")
 		if (ns.getPlayer().city != "Aevum") { ns.singularity.travelToCity("Aevum") }
 		ns.exec("casino.js", ns.getHostname(), 1)

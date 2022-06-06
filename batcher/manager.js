@@ -1,7 +1,7 @@
 //https://github.com/xxxsinx/bitburner
-import { BatchSpacer, RunScript, WaitPids, Prep, IsPrepped, ServerReport } from "/prep.js";
-import { Metrics, GetBestPctForServer } from "/metrics.js";
-import { MemoryMap } from "/ram.js";
+import { BatchSpacer, RunScript, WaitPids, Prep, IsPrepped, ServerReport } from "/batcher/prep.js";
+import { Metrics, GetBestPctForServer } from "/batcher/metrics.js";
+import { MemoryMap } from "/auxiliary/ram.js";
 
 const H = 0;
 const W1 = 1;

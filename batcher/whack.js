@@ -1,5 +1,5 @@
 //https://github.com/xxxsinx/bitburner
-import { MemoryMap } from "ram.js";
+import { MemoryMap } from "/auxiliary/ram.js";
 
 export function BatchSpacer() {
 	return 30;

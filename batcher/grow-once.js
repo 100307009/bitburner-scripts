@@ -7,7 +7,7 @@ export async function main(ns) {
 	const [target, delay, expectedTime, batchNumber, logColor] = ns.args;
 	await ns.sleep(delay);
 	const start = performance.now();
-	await ns.grow(target, { stock: true });
+	await ns.grow(target);
 	const executionTime = performance.now() - start;
 	if (logColor != 0 && Math.abs(expectedTime - executionTime) > 100) {
 		ColorPrint(logColor, 'Batch #' + batchNumber + ' grow did not end with expected start=' + Math.round(start) + ' expected= ' + expectedTime + ' executionTime= ' + executionTime);

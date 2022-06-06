@@ -1,10 +1,10 @@
 //https://github.com/xxxsinx/bitburner
 //this.hackDifficulty -= amt * BitNodeMultipliers.ServerWeakenRate;
 
-import { BatchSpacer, FormatMoney } from "prep.js";
-import { MemoryMap } from "ram.js";
-import { GetAllServers } from "utils.js";
-import { PrintTable, DefaultStyle, ColorPrint } from 'tables.js'
+import { BatchSpacer, FormatMoney } from "/batcher/prep.js";
+import { MemoryMap } from "/auxiliary/ram.js";
+import { GetAllServers } from "/auxiliary/utils.js";
+import { PrintTable, DefaultStyle, ColorPrint } from '/auxiliary/tables.js'
 
 const H = 0;	// Index of HACK data
 const W1 = 1;	// Index of first WEAKEN data

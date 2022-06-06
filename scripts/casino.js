@@ -1,5 +1,3 @@
-//import { log, getConfiguration, getFilePath, waitForProcessToComplete, runCommand, getNsDataThroughFile } from './helpers.js'
-
 const ran_flag = "/Temp/ran-casino.txt"
 let doc = eval("document");
 let options;

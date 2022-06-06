@@ -1,5 +1,5 @@
-import { GetAllServers } from "utils.js";
-import { PrintTable, DefaultStyle, ColorPrint } from 'tables.js'
+import { GetAllServers } from "/auxiliary/utils.js";
+import { PrintTable, DefaultStyle, ColorPrint } from '/auxiliary/tables.js'
 
 /** @param {NS} ns **/
 export async function main(ns) {

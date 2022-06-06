@@ -1,4 +1,4 @@
-import { GetAllServers } from "utils.js";
+import { GetAllServers } from "/auxiliary/utils.js";
 
 let blacklist = [];
 
