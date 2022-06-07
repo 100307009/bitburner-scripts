@@ -25,7 +25,7 @@ export async function main(ns) {
 
 	if (ns.args[0] == 'debug') {
 		let bo = ns.bladeburner.getBlackOpNames();
-		ns.tprint(bo.length);
+		ns.print(bo.length);
 		return;
 	}
 
@@ -46,7 +46,7 @@ export async function main(ns) {
 			if (skill == 'Reaper' && ns.bladeburner.getSkillLevel(skill) >= 500) continue;
 			if (skill == 'Evasive System' && ns.bladeburner.getSkillLevel(skill) >= 0.5 * ns.bladeburner.getSkillLevel("Hyperdrive")) continue;
 
-			ns.tprint('INFO: Upgrading ' + skill + " to lvl " + ns.bladeburner.getSkillLevel(skill));
+			ns.print('INFO: Upgrading ' + skill + " to lvl " + ns.bladeburner.getSkillLevel(skill));
 			ns.bladeburner.upgradeSkill(skill);
 		}
 
@@ -117,10 +117,10 @@ export async function main(ns) {
 
 		tasks = tasks.sort((a, b) => b.rpm - a.rpm).filter(t => t.lowChance >= 0.4);
 
-		// ns.tprint('INFO: Found BlackOps   = ' + blackOps.length + ' ' + blackOps.map(s => s.name));
-		// ns.tprint('INFO: Found Operations = ' + operations.length + ' ' + operations.map(s => s.name));
-		// ns.tprint('INFO: Found Contracts  = ' + contracts.length + ' ' + contracts.map(s => s.name));
-		// ns.tprint('INFO: Found Tasks  = ' + tasks.length + ' ' + tasks.map(s => s.name));
+		// ns.print('INFO: Found BlackOps   = ' + blackOps.length + ' ' + blackOps.map(s => s.name));
+		// ns.print('INFO: Found Operations = ' + operations.length + ' ' + operations.map(s => s.name));
+		// ns.print('INFO: Found Contracts  = ' + contracts.length + ' ' + contracts.map(s => s.name));
+		// ns.print('INFO: Found Tasks  = ' + tasks.length + ' ' + tasks.map(s => s.name));
 
 		ns.clearLog();
 		ns.print(
@@ -152,7 +152,7 @@ export async function main(ns) {
 
 		const spreaded = tasks.filter(t => t.highChance - t.lowChance > 0.05);
 		if (spreaded.length > 0) {
-			//ns.tprint('FAIL: We need to do some field analysis');
+			//ns.print('FAIL: We need to do some field analysis');
 			theChosenOne = {
 				type: 'General',
 				name: 'Field Analysis',
